@@ -9,26 +9,45 @@
         <input type="text" name="num1" id="num1">
         <input type="text" name="operation" id="operation" value="+">
         <input type="text" name="num2" id="num2">
-        <button id="calculatebtn1">Rēķināt</button>
+        <button id="calculatebtn1">Rēķināt</button><br><br>
+
+        <input type="text" name="num3" id="num3">
+        <input type="text" name="operation" id="operation" value="-">
+        <input type="text" name="num4" id="num4">
+        <button id="calculatebtn2">Rēķināt</button>
 </body>
 <script>
     let calculated1 = false
     let num1 = document.getElementById("num1") 
     let num2 = document.getElementById("num2")
+    let num3 = document.getElementById("num3") 
+    let num4 = document.getElementById("num4")
 
     let operation = document.getElementById("operation").value
     let button = document.getElementById("calculatebtn1")
     button.addEventListener("click", calculate)
 
+    let button2 = document.getElementById("calculatebtn2")
+    button2.addEventListener("click", calculate2)
+
     function calculate(){
         console.log(Number(num1.value), Number(num2.value))
-        let result = Number(num1.value) + Number(num2.value)
+        let result1 = Number(num1.value) + Number(num2.value)
         let resultp = document.createElement("p")
-        console.log(result)
-        resultp.innerHTML = "Rezultāts ir " + result
+        console.log(result1)
+        resultp.innerHTML = "Rezultāts ir " + result1
         resultp.id = "result1"
-        calculated1 = true
         document.body.appendChild(resultp)
+    }
+
+    function calculate2(){
+        console.log(Number(num3.value), Number(num4.value))
+        let result1 = Number(num3.value) - Number(num4.value)
+        let resultp1 = document.createElement("p")
+        console.log(result1)
+        resultp1.innerHTML = "Rezultāts ir " + result1
+        resultp1.id = "result1"
+        document.body.appendChild(resultp1)
     }
     
 
